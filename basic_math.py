@@ -25,6 +25,8 @@ def get_greatest(number_list):
             99
     """
     greatest_number = None
+    sort_number_list = sorted(number_list)
+    greatest_number = sort_number_list[-1]
     return greatest_number
 
 
@@ -46,6 +48,8 @@ def get_smallest(number_list):
             11
     """
     smallest_number = None
+    sort_number_list = sorted(number_list)
+    smallest_number = sort_number_list[0]
     return smallest_number
 
 
@@ -67,6 +71,8 @@ def get_mean(number_list):
             47
     """
     mean = None
+    copy_number_list = number_list[:]
+    mean = sum(copy_number_list) / len(copy_number_list)
     return mean
 
 
@@ -91,4 +97,10 @@ def get_median(number_list):
             35.5
     """
     median = None
+    copy_number_list = sorted(number_list[:])
+    n = len(copy_number_list)
+    if n % 2 == 1: 
+        median = copy_number_list[int(n/2)]
+    else:
+        median = (copy_number_list[int(n/2)-1] + copy_number_list[int(n/2)])/2
     return median
